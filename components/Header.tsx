@@ -1,4 +1,5 @@
 import { BellIcon, SearchIcon } from '@heroicons/react/solid';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
@@ -23,7 +24,6 @@ function Header() {
 
 	return (
 		<header className={`${isScrolled && 'bg-[#141414]'}`}>
-			{/* Sección izquierda del Header */}
 			<div className="flex items-center space-x-2 md:space-x-10">
 				<img
 					src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
@@ -32,7 +32,9 @@ function Header() {
 					className="cursor-pointer object-contain"
 				/>
 				<ul className="hidden space-x-4 md:flex">
-					<li className="headerLink">Inicio</li>
+					<li className="headerLink cursor-default font-semibold text-white hover:text-white">
+						Inicio
+					</li>
 					<li className="headerLink">Series TV</li>
 					<li className="headerLink">Películas</li>
 					<li className="headerLink">Novedades más vistas</li>
@@ -43,7 +45,7 @@ function Header() {
 			{/* Sección derecha del Header */}
 			<div className="flex items-center space-x-4 text-sm font-light">
 				<SearchIcon className="sm hidden h-6 w-6 sm:inline" />
-				<p className="hidden lg:inline">Kids</p>
+				<p className="hidden lg:inline">Infantil</p>
 				<BellIcon className="h-6 w-6" />
 				<Link href="/account">
 					<img

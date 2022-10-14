@@ -1,26 +1,56 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
+import Banner from '../components/Banner';
 import Header from '../components/Header';
+import Row from '../components/Row';
+import { Pelicula } from '../typings';
+import requests from '../utils/requests';
 
-const Home: NextPage = () => {
+interface Props {
+	netflixOriginals: Pelicula[];
+	tendenciaAhora: Pelicula[];
+	mejorValoradas: Pelicula[];
+	peliculasAccion: Pelicula[];
+	peliculasComedia: Pelicula[];
+	peliculasTerror: Pelicula[];
+	peliculasRomanticas: Pelicula[];
+	documentales: Pelicula[];
+}
+
+const Home = ({
+	netflixOriginals,
+	tendenciaAhora,
+	mejorValoradas,
+	peliculasAccion,
+	peliculasComedia,
+	peliculasTerror,
+	peliculasRomanticas,
+	documentales,
+}: Props) => {
 	return (
-		<div className="relative h-screen bg-gradient-to-b from-gray-900/10 to-[#010511] lg:h-[140vh]">
+		<div
+			className={`relative h-screen bg-gradient-to-b from-gray-900/10 to-[#010511] lg:h-[140vh]`}
+		>
 			<Head>
-				<title>Create Next App</title>
+				<title>Página Principal - Netflix</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			{/* Header */}
+
 			<Header />
-			<main>
-				{/* Banner */}
-				<section>
-					{/* Fila */}
-					{/* Fila */}
-					{/* Fila */}
-					{/* Fila */}
-					{/* Fila */}
-					{/* Fila */}
+
+			<main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-16 ">
+				<Banner netflixOriginals={netflixOriginals} />
+				<section className="md:space-y-24">
+					<Row titulo="Tendencias Ahora" peliculas={tendenciaAhora} />
+					<Row titulo="Películas Mejor Valoradas" peliculas={mejorValoradas} />
+					<Row titulo="Películas de Acción" peliculas={peliculasAccion} />
+					{/* My List */}
+
+					<Row titulo="Películas de Comedia" peliculas={peliculasComedia} />
+					<Row titulo="Películas de Terror" peliculas={peliculasTerror} />
+					<Row titulo="Películas Románticas" peliculas={peliculasRomanticas} />
+					<Row titulo="Documentales" peliculas={documentales} />
 				</section>
 			</main>
 		</div>
@@ -28,3 +58,38 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getServerSideProps = async () => {
+	const [
+		netflixOriginals,
+		tendenciaAhora,
+		mejorValoradas,
+		peliculasAccion,
+		peliculasComedia,
+		peliculasTerror,
+		peliculasRomanticas,
+		documentales,
+	] = await Promise.all([
+		fetch(requests.fetchNetflixOriginals).then((res) => res.json()),
+		fetch(requests.fetchTrending).then((res) => res.json()),
+		fetch(requests.fetchMejorValoradas).then((res) => res.json()),
+		fetch(requests.fetchPeliculasAccion).then((res) => res.json()),
+		fetch(requests.fetchPeliculasComedia).then((res) => res.json()),
+		fetch(requests.fetchPeliculasTerror).then((res) => res.json()),
+		fetch(requests.fetchPeliculasRomanticas).then((res) => res.json()),
+		fetch(requests.fetchDocumentales).then((res) => res.json()),
+	]);
+
+	return {
+		props: {
+			netflixOriginals: netflixOriginals.results,
+			tendenciaAhora: tendenciaAhora.results,
+			mejorValoradas: mejorValoradas.results,
+			peliculasAccion: peliculasAccion.results,
+			peliculasComedia: peliculasComedia.results,
+			peliculasTerror: peliculasTerror.results,
+			peliculasRomanticas: peliculasRomanticas.results,
+			documentales: documentales.results,
+		},
+	};
+};
