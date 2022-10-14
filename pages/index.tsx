@@ -10,6 +10,18 @@ const Home: NextPage = () => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			VAMOS A HACER NETFLIX
+			{/* Header */}
+			<main>
+				{/* Banner */}
+				<section>
+					{/* Fila */}
+					{/* Fila */}
+					{/* Fila */}
+					{/* Fila */}
+					{/* Fila */}
+					{/* Fila */}
+				</section>
+			</main>
 		</div>
 	);
 };
