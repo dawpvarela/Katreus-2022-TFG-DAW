@@ -1,27 +1,29 @@
-# Next.js + Tailwind CSS Example
+# Netflix V2 - Pablo Varela Delgado
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+  
 
-## Deploy your own
+Bienvenido al respositorio de mi proyecto de Desarollo de Aplicaciones Web.
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+  
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+## Descripción
 
-## How to use
+  
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+Este proyecto es un clon de la plataforma de Netflix creado con [Next.js](https://nextjs.org/), con [Stripe](https://stripe.com/es), con [TMDB API](https://www.themoviedb.org/?language=es-ES) y [Tailwind Css](), y usando el lenguaje Typescript.
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-```
+La página sera desplegada con [Vercel](https://vercel.com/).
 
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
+## Memoria del Proyecto y Calendario
+   Memoria del Proyecto  --> [Enlace](https://docs.google.com/document/d/1Vd98nRhGuhpM9YCAWza7RKbO26aWeX0OhjGyBtHrxGA/edit?usp=sharing) | 
+   Organización TFG   --> [Enlace](https://docs.google.com/spreadsheets/d/1sWPNI9roE-ddgkvC6dc3p_06CK5IdPTXR9OtuEl7oMs/edit?usp=sharing)
 
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
+   
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+  
+
+## Contacto
+
+  
+
+Para contactarme mandar correo a varelapablo2002@hotmail.com.
