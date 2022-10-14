@@ -1,6 +1,9 @@
+import { BellIcon, SearchIcon } from '@heroicons/react/solid';
+
 function Header() {
 	return (
 		<header>
+			{/* Sección izquierda del Header */}
 			<div className="">
 				<img
 					src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
@@ -16,7 +19,13 @@ function Header() {
 					<li className="headerLink">Mi Lista</li>
 				</ul>
 			</div>
-			<div></div>
+
+			{/* Sección derecha del Header */}
+			<div>
+				<SearchIcon className="sm hidden h-6 w-6 sm:inline" />
+				<p className="hidden lg:inline">Kids</p>
+				<BellIcon className="h-6 w-6" />
+			</div>
 		</header>
 	);
 }
