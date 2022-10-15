@@ -43,7 +43,7 @@ const Home = ({
 					<Row titulo="Tendencias Ahora" peliculas={tendenciaAhora} />
 					<Row titulo="Películas Mejor Valoradas" peliculas={mejorValoradas} />
 					<Row titulo="Películas de Acción" peliculas={peliculasAccion} />
-					{/* My List */}
+					{/* Mi Lista */}
 
 					<Row titulo="Películas de Comedia" peliculas={peliculasComedia} />
 					<Row titulo="Películas de Terror" peliculas={peliculasTerror} />
