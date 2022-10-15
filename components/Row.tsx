@@ -1,10 +1,11 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/outline';
-import { useRef, useState } from 'react';
 import { Pelicula } from '../typings';
 import Thumbnail from './Thumbnail';
 
 interface Props {
 	titulo: string;
+	//Cuando se usa Firebase
+	//pelicula: Pelicula | DocumentData
 	peliculas: Pelicula[];
 }
 
