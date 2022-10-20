@@ -1,7 +1,10 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import { useState } from 'react';
 
 function login() {
+	const [login, setLogins] = useState(false);
+
 	return (
 		<div className="relative flex h-screen w-screen flex-col bg-black md:items-center md:justify-center md:bg-transparent">
 			<Head>
@@ -9,7 +12,7 @@ function login() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Image
-				src="https://rb.gy/p2hphi"
+				src="https://rb.gy/h6ypis"
 				layout="fill"
 				className="-z-10 !hidden opacity-60 sm:!inline"
 				objectFit="cover"
@@ -20,6 +23,34 @@ function login() {
 				width={150}
 				height={150}
 			/>
+
+			<form className="relative mt-24 space-y-8 rounded bg-black/75 py-10 px-6 md:mt-0 md:max-w-md md:px-14">
+				<h1 className="text-4xl font-semibold">Iniciar sesión</h1>
+				<div className="space-y-4">
+					<label className="inline-block w-full">
+						<input
+							type="email"
+							placeholder="Correo electrónico"
+							className="input"
+						/>
+					</label>
+					<label className="inline-block w-full">
+						<input type="password" placeholder="Contraseña" className="input" />
+					</label>
+				</div>
+
+				<button className="w-full rounded bg-[#e50914] py-3 font-semibold">
+					Iniciar sesión
+				</button>
+
+				<div className="text-[gray]">
+					¿Todavía sin Netflix?{' '}
+					<button type="submit" className="text-white hover:underline">
+						Suscríbete ya
+					</button>
+					.
+				</div>
+			</form>
 		</div>
 	);
 }
