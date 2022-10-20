@@ -16,15 +16,14 @@ function login() {
 		formState: { errors },
 	} = useForm<Inputs>();
 
-	const onSubmit: SubmitHandler<Inputs> =
-		(data) =>
-		async ({ email, password }) => {
-			if (login) {
-				// await signIn(email, password);
-			} else {
-				// await signUp(email, password);
-			}
-		};
+	const onSubmit: SubmitHandler<Inputs> = async (data) => {
+		console.log(data);
+		if (login) {
+			// await signIn(email, password);
+		} else {
+			// await signUp(email, password);
+		}
+	};
 
 	return (
 		<div className="relative flex h-screen w-screen flex-col bg-black md:items-center md:justify-center md:bg-transparent">
