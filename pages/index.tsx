@@ -3,6 +3,7 @@ import { useRecoilValue } from 'recoil';
 import { modalState } from '../atoms/modalAtom';
 import Banner from '../components/Banner';
 import Header from '../components/Header';
+import Modal from '../components/Modal';
 import Row from '../components/Row';
 import useAuth from '../hooks/useAuth';
 import { Pelicula } from '../typings';
@@ -59,7 +60,7 @@ const Home = ({
 					<Row titulo="Documentales" peliculas={documentales} />
 				</section>
 			</main>
-			{/* {showModal && <Modal />} */}
+			{showModal && <Modal />}
 		</div>
 	);
 };
