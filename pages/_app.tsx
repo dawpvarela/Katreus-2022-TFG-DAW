@@ -4,6 +4,7 @@ import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
+		//HOC
 		<AuthProvider>
 			<Component {...pageProps} />
 		</AuthProvider>
