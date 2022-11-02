@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useRecoilValue } from 'recoil';
 import Banner from '../components/Banner';
 import Header from '../components/Header';
 import Row from '../components/Row';
@@ -28,6 +29,7 @@ const Home = ({
 	documentales,
 }: Props) => {
 	const { logout, loading } = useAuth();
+	//const showModal = useRecoilValue();
 
 	if (loading) return null;
 
@@ -56,6 +58,7 @@ const Home = ({
 					<Row titulo="Documentales" peliculas={documentales} />
 				</section>
 			</main>
+			{/* Modal */}
 		</div>
 	);
 };
