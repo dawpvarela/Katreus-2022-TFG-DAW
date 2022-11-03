@@ -30,7 +30,7 @@ function Modal() {
 					pelicula?.media_type === 'tv' ? 'tv' : 'movie'
 				}/${pelicula?.id}?api_key=${
 					process.env.NEXT_PUBLIC_API_KEY
-				}&language=es-ES&append_to_response=videos`
+				}&language=en-US&append_to_response=videos`
 			).then((response) => response.json());
 
 			if (data?.videos) {
@@ -44,6 +44,7 @@ function Modal() {
 				setGenres(data.genres);
 			}
 		}
+
 		fetchMovie();
 	}, [pelicula]);
 
@@ -102,7 +103,7 @@ function Modal() {
 					<div className="space-y-6 text-lg">
 						<div className="flex items-center space-x-2 text-sm">
 							<p className="font-semibold text-green-400">
-								{pelicula?.vote_average * 10}% de coincidencia
+								{(pelicula?.vote_average * 10).toFixed()}% de coincidencia
 							</p>
 							<p className="font-light">
 								{pelicula?.release_date || pelicula?.first_air_date}

@@ -35,7 +35,7 @@ function login() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Image
-				src="https://rb.gy/h6ypis"
+				src="https://rb.gy/keoemu"
 				layout="fill"
 				className="-z-10 !hidden opacity-60 sm:!inline"
 				objectFit="cover"
