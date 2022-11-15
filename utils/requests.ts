@@ -10,9 +10,15 @@ const requests = {
 	fetchPeliculasTerror: `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=es-ES&with_genres=27`,
 	fetchPeliculasRomanticas: `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=es-ES&with_genres=10749`,
 	fetchDocumentales: `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=es-ES&with_genres=99`,
-	fetchSeries: `${BASE_URL}/tv/popular?api_key=${API_KEY}&language=es-ES&page=1`,
-	fetchSeries2: `${BASE_URL}/tv/popular?api_key=${API_KEY}&language=es-ES&page=2`,
-	fetchSeries3: `${BASE_URL}/tv/popular?api_key=${API_KEY}&language=es-ES&page=4`,
+	fetchSeries: `${BASE_URL}/trending/tv/week?api_key=${API_KEY}&language=es-ES&page=1`,
+	fetchSeries2: `${BASE_URL}/trending/tv/week?api_key=${API_KEY}&language=es-ES&page=2`,
+	fetchSeries3: `${BASE_URL}/trending/tv/week?api_key=${API_KEY}&language=es-ES&page=4`,
+	fetchPeliculasTrending: `${BASE_URL}/trending/movie/week?api_key=${API_KEY}&language=es-ES&page=1`,
+	fetchPeliculasTrending2: `${BASE_URL}/trending/movie/week?api_key=${API_KEY}&language=es-ES&page=2`,
+	fetchPeliculasTrending3: `${BASE_URL}/trending/movie/week?api_key=${API_KEY}&language=es-ES&page=3`,
+	fetchPeliculasPopular: `${BASE_URL}/movie/popular?api_key=${API_KEY}&language=es-ES&page=1`,
+	fetchPeliculasPopular2: `${BASE_URL}/movie/popular?api_key=${API_KEY}&language=es-ES&page=2`,
+	fetchPeliculasPopular3: `${BASE_URL}/movie/popular?api_key=${API_KEY}&language=es-ES&page=3`,
 };
 
 export default requests;

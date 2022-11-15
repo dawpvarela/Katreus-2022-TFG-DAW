@@ -67,6 +67,13 @@ function Modal() {
 				</button>
 
 				<div className="relative  pt-[56.25%]">
+					<img
+						src="/trailerNoDisponible.png"
+						width="100%"
+						height="100%"
+						className="cursor-pointer object-contain"
+						style={{ position: 'absolute', top: '0', left: '0' }}
+					/>
 					<ReactPlayer
 						url={`https://www.youtube.com/watch?v=${trailer}`}
 						width="100%"

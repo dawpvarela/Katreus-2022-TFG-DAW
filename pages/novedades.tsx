@@ -2,9 +2,11 @@ import Head from 'next/head';
 import { useRecoilValue } from 'recoil';
 import { modalState } from '../atoms/modalAtom';
 import Banner from '../components/Banner';
+import GridNovedades from '../components/GridNovedades';
+import GridPeliculas from '../components/GridPeliculas';
 import Grid from '../components/GridSeries';
 import Header from '../components/Header';
-import ModalSeries from '../components/ModalSeries';
+import Modal from '../components/Modal';
 import useAuth from '../hooks/useAuth';
 import { Pelicula } from '../typings';
 import requests from '../utils/requests';
@@ -21,6 +23,12 @@ interface Props {
 	series: Pelicula[];
 	series2: Pelicula[];
 	series3: Pelicula[];
+	peliculasTendencia: Pelicula[];
+	peliculasTendencia2: Pelicula[];
+	peliculasTendencia3: Pelicula[];
+	peliculasPopular: Pelicula[];
+	peliculasPopular2: Pelicula[];
+	peliculasPopular3: Pelicula[];
 }
 
 const Home = ({
@@ -35,6 +43,12 @@ const Home = ({
 	series,
 	series2,
 	series3,
+	peliculasTendencia,
+	peliculasTendencia2,
+	peliculasTendencia3,
+	peliculasPopular,
+	peliculasPopular2,
+	peliculasPopular3,
 }: Props) => {
 	const { logout, loading } = useAuth();
 	const showModal = useRecoilValue(modalState);
@@ -48,18 +62,20 @@ const Home = ({
 			}`}
 		>
 			<Head>
-				<title>Series TV - Netflix</title>
+				<title>Novedades - Netflix</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
 			<Header />
 
 			<main className="relative  pl-4 pr-4 pb-24 lg:space-y-24  lg:pl-16 lg:pr-16">
-				<Banner netflixOriginals={series} />
-
-				<Grid peliculas1={series} peliculas2={series2} peliculas3={series3} />
+				<GridNovedades
+					peliculas1={peliculasPopular}
+					peliculas2={peliculasPopular2}
+					peliculas3={peliculasPopular3}
+				/>
 			</main>
-			{showModal && <ModalSeries />}
+			{showModal && <Modal />}
 		</div>
 	);
 };
@@ -79,6 +95,12 @@ export const getServerSideProps = async () => {
 		series,
 		series2,
 		series3,
+		peliculasTendencia,
+		peliculasTendencia2,
+		peliculasTendencia3,
+		peliculasPopular,
+		peliculasPopular2,
+		peliculasPopular3,
 	] = await Promise.all([
 		fetch(requests.fetchNetflixOriginals).then((res) => res.json()),
 		fetch(requests.fetchTrending).then((res) => res.json()),
@@ -91,6 +113,12 @@ export const getServerSideProps = async () => {
 		fetch(requests.fetchSeries).then((res) => res.json()),
 		fetch(requests.fetchSeries2).then((res) => res.json()),
 		fetch(requests.fetchSeries3).then((res) => res.json()),
+		fetch(requests.fetchPeliculasTrending).then((res) => res.json()),
+		fetch(requests.fetchPeliculasTrending2).then((res) => res.json()),
+		fetch(requests.fetchPeliculasTrending3).then((res) => res.json()),
+		fetch(requests.fetchPeliculasPopular).then((res) => res.json()),
+		fetch(requests.fetchPeliculasPopular2).then((res) => res.json()),
+		fetch(requests.fetchPeliculasPopular3).then((res) => res.json()),
 	]);
 
 	return {
@@ -106,6 +134,12 @@ export const getServerSideProps = async () => {
 			series: series.results,
 			series2: series2.results,
 			series3: series3.results,
+			peliculasTendencia: peliculasTendencia.results,
+			peliculasTendencia2: peliculasTendencia2.results,
+			peliculasTendencia3: peliculasTendencia3.results,
+			peliculasPopular: peliculasPopular.results,
+			peliculasPopular2: peliculasPopular2.results,
+			peliculasPopular3: peliculasPopular3.results,
 		},
 	};
 };

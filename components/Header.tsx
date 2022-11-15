@@ -48,8 +48,12 @@ function Header() {
 					<Link href="/series">
 						<li className="headerLink">Series TV</li>
 					</Link>
-					<li className="headerLink">Películas</li>
-					<li className="headerLink">Novedades más vistas</li>
+					<Link href="/peliculas">
+						<li className="headerLink">Películas</li>
+					</Link>
+					<Link href="/novedades">
+						<li className="headerLink">Novedades más vistas</li>
+					</Link>
 					<li className="headerLink">Mi Lista</li>
 				</ul>
 			</div>
