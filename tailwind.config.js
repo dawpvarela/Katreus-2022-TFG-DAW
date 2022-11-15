@@ -10,7 +10,7 @@ module.exports = {
 				'gradient-to-b':
 					'linear-gradient(to bottom,rgba(20,20,20,0) 0,rgba(20,20,20,.15) 15%,rgba(20,20,20,.35) 29%,rgba(20,20,20,.58) 44%,#141414 68%,#141414 100%);',
 				'gradient-to-t':
-					'linear-gradient(to top, rgba(20,20,20,0) 0,rgba(20,20,20,.15) 33%,rgba(20,20,20,.35) 66%,rgba(20,20,20,.58) 100%);',
+					'linear-gradient(to top, rgba(20,20,20,0) 0,rgba(20,20,20,.15) 10%,rgba(20,20,20,.25) 20%,rgba(20,20,20,.40) 30%, rgba(20,20,20,.68) 60%, rgba(20,20,20) 100%);',
 			},
 		},
 	},

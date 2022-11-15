@@ -26,22 +26,28 @@ function Header() {
 
 	return (
 		<header
-			className={`${!isScrolled && 'bg-gradient-to-t  to-black/10'} ${
+			className={`${!isScrolled && 'bg-gradient-to-t  to-black'} ${
 				isScrolled && 'bg-[#141414]'
 			}`}
 		>
 			<div className="flex items-center space-x-2 md:space-x-10">
-				<img
-					src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
-					width={100}
-					height={100}
-					className="cursor-pointer object-contain"
-				/>
+				<Link href="/">
+					<img
+						src="/Logonetflix.png"
+						width={100}
+						height={100}
+						className="cursor-pointer object-contain"
+					/>
+				</Link>
 				<ul className="hidden space-x-4 md:flex">
-					<li className="headerLink cursor-default font-semibold text-white hover:text-white">
-						Inicio
-					</li>
-					<li className="headerLink">Series TV</li>
+					<Link href="/">
+						<li className="headerLink cursor-default font-bold text-white hover:text-white">
+							Inicio
+						</li>
+					</Link>
+					<Link href="/series">
+						<li className="headerLink">Series TV</li>
+					</Link>
 					<li className="headerLink">Películas</li>
 					<li className="headerLink">Novedades más vistas</li>
 					<li className="headerLink">Mi Lista</li>
