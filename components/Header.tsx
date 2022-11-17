@@ -33,7 +33,7 @@ function Header() {
 			<div className="flex items-center space-x-2 md:space-x-10">
 				<Link href="/">
 					<img
-						src="/Logonetflix.png"
+						src="/katreus.png"
 						width={100}
 						height={100}
 						className="cursor-pointer object-contain"

@@ -48,7 +48,7 @@ const Home = ({
 			}`}
 		>
 			<Head>
-				<title>Series TV - Netflix</title>
+				<title>Series TV - Katreus</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 

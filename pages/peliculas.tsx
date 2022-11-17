@@ -55,7 +55,7 @@ const Home = ({
 			}`}
 		>
 			<Head>
-				<title>Películas - Netflix</title>
+				<title>Películas - Katreus</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 

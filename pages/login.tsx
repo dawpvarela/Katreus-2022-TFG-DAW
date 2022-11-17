@@ -31,17 +31,17 @@ function login() {
 	return (
 		<div className="relative flex h-screen w-screen flex-col bg-black md:items-center md:justify-center md:bg-transparent">
 			<Head>
-				<title>Netflix</title>
+				<title>Katreus</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Image
-				src="https://rb.gy/keoemu"
+				src="/fondo.png"
 				layout="fill"
 				className="-z-10 !hidden opacity-60 sm:!inline"
 				objectFit="cover"
 			/>
 			<img
-				src="https://rb.gy/ulxxee"
+				src="/katreus.png"
 				className="absolute left-4 top-4 cursor-pointer object-contain md:left-10 md:top-6"
 				width={150}
 				height={150}
@@ -82,14 +82,14 @@ function login() {
 				</div>
 
 				<button
-					className="w-full rounded bg-[#e50914] py-3 font-semibold"
+					className="w-full rounded bg-[#6c42f5] py-3 font-semibold"
 					onClick={() => setLogin(true)}
 				>
 					Iniciar sesión
 				</button>
 
 				<div className="text-[gray]">
-					¿Todavía sin Netflix?{' '}
+					¿Todavía sin Katreus?{' '}
 					<button
 						type="submit"
 						className="text-white hover:underline"
