@@ -4,7 +4,7 @@ Bienvenido al respositorio de mi proyecto de Desarollo de Aplicaciones Web.
 
 ## Enlace Web (Despliegue de la Aplicación)
 
-Enlace de la página ---> [Página Web](https://netflix-v2-hazel.vercel.app/)
+Enlace de la página ---> [Página Web](https://katreus-hazel.vercel.app)
 
 ## Descripción
 
