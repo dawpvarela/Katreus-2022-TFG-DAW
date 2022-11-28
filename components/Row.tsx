@@ -1,4 +1,5 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/outline';
+import { DocumentData } from 'firebase/firestore';
 import { useRef, useState } from 'react';
 import { Pelicula } from '../typings';
 import Thumbnail from './Thumbnail';
@@ -6,8 +7,7 @@ import Thumbnail from './Thumbnail';
 interface Props {
 	titulo: string;
 	//Cuando se usa Firebase
-	//pelicula: Pelicula | DocumentData
-	peliculas: Pelicula[];
+	peliculas: Pelicula | DocumentData[];
 }
 
 function Row({ titulo, peliculas }: Props) {

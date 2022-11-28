@@ -1,13 +1,15 @@
 import { getProducts, Product } from '@stripe/firestore-stripe-payments';
 import Head from 'next/head';
 import { useRecoilValue } from 'recoil';
-import { modalState } from '../atoms/modalAtom';
+import { modalState, movieState } from '../atoms/modalAtom';
 import Banner from '../components/Banner';
 import Header from '../components/Header';
 import Modal from '../components/Modal';
 import Plans from '../components/Plans';
 import Row from '../components/Row';
 import useAuth from '../hooks/useAuth';
+import useList from '../hooks/useList';
+import useSubscription from '../hooks/useSubscription';
 import payments from '../lib/stripe';
 import { Pelicula } from '../typings';
 import requests from '../utils/requests';
@@ -36,9 +38,11 @@ const Home = ({
 	products,
 }: Props) => {
 	console.log(products);
-	const { logout, loading } = useAuth();
+	const { user, loading } = useAuth();
 	const showModal = useRecoilValue(modalState);
-	const subscription = false;
+	const subscription = useSubscription(user);
+	const movie = useRecoilValue(movieState);
+	const list = useList(user?.uid);
 
 	if (loading || subscription === null) return null;
 
@@ -64,7 +68,7 @@ const Home = ({
 					<Row titulo="Películas Mejor Valoradas" peliculas={mejorValoradas} />
 					<Row titulo="Películas de Acción" peliculas={peliculasAccion} />
 					{/* Mi Lista */}
-
+					{list.length > 0 && <Row titulo="Mi Lista" peliculas={list} />}
 					<Row titulo="Películas de Comedia" peliculas={peliculasComedia} />
 					<Row titulo="Películas de Terror" peliculas={peliculasTerror} />
 					<Row titulo="Películas Románticas" peliculas={peliculasRomanticas} />
