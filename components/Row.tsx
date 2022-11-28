@@ -7,7 +7,7 @@ import Thumbnail from './Thumbnail';
 interface Props {
 	titulo: string;
 	//Cuando se usa Firebase
-	peliculas: Pelicula | DocumentData[];
+	peliculas: Pelicula[] | DocumentData[];
 }
 
 function Row({ titulo, peliculas }: Props) {
