@@ -7,7 +7,6 @@ import BasicMenu from './BasicMenu';
 
 function Header() {
 	const [isScrolled, setIsScrolled] = useState(false);
-	const { logout } = useAuth();
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -58,7 +57,9 @@ function Header() {
 					<Link href="/novedades">
 						<li className="headerLink">Novedades más vistas</li>
 					</Link>
-					<li className="headerLink">Mi Lista</li>
+					<Link href="/my-list">
+						<li className="headerLink">Mi Lista</li>
+					</Link>
 				</ul>
 			</div>
 

@@ -50,7 +50,9 @@ export default function BasicMenu() {
 				<Link href="/novedades">
 					<MenuItem onClick={handleClose}>Novedades más vistas</MenuItem>
 				</Link>
-				<MenuItem onClick={handleClose}>Mi Lista</MenuItem>
+				<Link href="/my-list">
+					<MenuItem onClick={handleClose}>Mi Lista</MenuItem>
+				</Link>
 			</Menu>
 		</div>
 	);
