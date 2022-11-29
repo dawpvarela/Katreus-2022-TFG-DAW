@@ -3,7 +3,6 @@ import React from 'react';
 import { useRecoilValue } from 'recoil';
 import { modalState } from '../atoms/modalAtom';
 import GridMiLista from '../components/GridMiLista';
-import GridPeliculas from '../components/GridNovedades';
 import Header from '../components/Header';
 import Modal from '../components/Modal';
 import useAuth from '../hooks/useAuth';

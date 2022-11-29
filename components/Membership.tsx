@@ -55,11 +55,15 @@ function Membership() {
 						</p>
 					</div>
 					<div className="md:text-right">
-						<p className="membershipLink">Gestionar información de pago</p>
-						<p className="membershipLink">
+						<p className="membershipLink" onClick={goToBillingPortal}>
+							Gestionar información de pago
+						</p>
+						<p className="membershipLink" onClick={goToBillingPortal}>
 							Añadir un método de pago secundario
 						</p>
-						<p className="membershipLink">Datos de facturación</p>
+						<p className="membershipLink" onClick={goToBillingPortal}>
+							Datos de facturación
+						</p>
 						<p className="membershipLink">Cambiar día de facturación</p>
 					</div>
 				</div>

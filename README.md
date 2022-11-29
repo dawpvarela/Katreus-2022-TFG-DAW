@@ -1,4 +1,4 @@
-# Netflix V2 - Pablo Varela Delgado
+# Katreus - Pablo Varela Delgado
 
 Bienvenido al respositorio de mi proyecto de Desarollo de Aplicaciones Web.
 

@@ -10,32 +10,12 @@ import { Pelicula } from '../typings';
 import requests from '../utils/requests';
 
 interface Props {
-	netflixOriginals: Pelicula[];
-	tendenciaAhora: Pelicula[];
-	mejorValoradas: Pelicula[];
-	peliculasAccion: Pelicula[];
-	peliculasComedia: Pelicula[];
-	peliculasTerror: Pelicula[];
-	peliculasRomanticas: Pelicula[];
-	documentales: Pelicula[];
 	series: Pelicula[];
 	series2: Pelicula[];
 	series3: Pelicula[];
 }
 
-const Home = ({
-	netflixOriginals,
-	tendenciaAhora,
-	mejorValoradas,
-	peliculasAccion,
-	peliculasComedia,
-	peliculasTerror,
-	peliculasRomanticas,
-	documentales,
-	series,
-	series2,
-	series3,
-}: Props) => {
+const Home = ({ series, series2, series3 }: Props) => {
 	const { logout, loading } = useAuth();
 	const showModal = useRecoilValue(modalState);
 
@@ -67,27 +47,7 @@ const Home = ({
 export default Home;
 
 export const getServerSideProps = async () => {
-	const [
-		netflixOriginals,
-		tendenciaAhora,
-		mejorValoradas,
-		peliculasAccion,
-		peliculasComedia,
-		peliculasTerror,
-		peliculasRomanticas,
-		documentales,
-		series,
-		series2,
-		series3,
-	] = await Promise.all([
-		fetch(requests.fetchNetflixOriginals).then((res) => res.json()),
-		fetch(requests.fetchTrending).then((res) => res.json()),
-		fetch(requests.fetchMejorValoradas).then((res) => res.json()),
-		fetch(requests.fetchPeliculasAccion).then((res) => res.json()),
-		fetch(requests.fetchPeliculasComedia).then((res) => res.json()),
-		fetch(requests.fetchPeliculasTerror).then((res) => res.json()),
-		fetch(requests.fetchPeliculasRomanticas).then((res) => res.json()),
-		fetch(requests.fetchDocumentales).then((res) => res.json()),
+	const [series, series2, series3] = await Promise.all([
 		fetch(requests.fetchSeries).then((res) => res.json()),
 		fetch(requests.fetchSeries2).then((res) => res.json()),
 		fetch(requests.fetchSeries3).then((res) => res.json()),
@@ -95,14 +55,6 @@ export const getServerSideProps = async () => {
 
 	return {
 		props: {
-			netflixOriginals: netflixOriginals.results,
-			tendenciaAhora: tendenciaAhora.results,
-			mejorValoradas: mejorValoradas.results,
-			peliculasAccion: peliculasAccion.results,
-			peliculasComedia: peliculasComedia.results,
-			peliculasTerror: peliculasTerror.results,
-			peliculasRomanticas: peliculasRomanticas.results,
-			documentales: documentales.results,
 			series: series.results,
 			series2: series2.results,
 			series3: series3.results,

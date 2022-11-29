@@ -41,7 +41,7 @@ const Home = ({
 	const { user, loading } = useAuth();
 	const showModal = useRecoilValue(modalState);
 	const subscription = useSubscription(user);
-	const movie = useRecoilValue(movieState);
+	const pelicula = useRecoilValue(movieState);
 	const list = useList(user?.uid);
 
 	if (loading || subscription === null) return null;
@@ -55,7 +55,10 @@ const Home = ({
 			}`}
 		>
 			<Head>
-				<title>Página Principal - Katreus</title>
+				<title>
+					{pelicula?.title || pelicula?.original_name || 'Página Principal'} -
+					Katreus
+				</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
