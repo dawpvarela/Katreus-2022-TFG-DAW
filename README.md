@@ -1,6 +1,6 @@
 # Katreus - Pablo Varela Delgado
 
-Bienvenido al respositorio de mi proyecto de Desarollo de Aplicaciones Web.
+Bienvenido al respositorio de mi trabajo de fin de grado de Desarollo de Aplicaciones Web.
 
 ## Enlace Web (Despliegue de la Aplicación)
 
