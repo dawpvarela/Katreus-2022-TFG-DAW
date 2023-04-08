@@ -1,6 +1,6 @@
 # Katreus - Pablo Varela Delgado
 
-Bienvenido al respositorio de mi trabajo de fin de grado de Desarollo de Aplicaciones Web.
+Bienvenido al respositorio de mi trabajo de fin de grado de Desarollo de Aplicaciones Web. Ya fue evaluado como TFG en el Ies Castelar con una nota de un 10/10.
 
 ## Enlace Web (Despliegue de la Aplicación)
 
@@ -8,7 +8,7 @@ Enlace de la página ---> [Página Web](https://katreus-hazel.vercel.app)
 
 ## Descripción
 
-Este proyecto es un clon de la plataforma de Netflix creado con [Next.js](https://nextjs.org/), con [Stripe](https://stripe.com/es), con [TMDB API](https://www.themoviedb.org/?language=es-ES) y [Tailwind Css](), y usando el lenguaje Typescript.
+Este proyecto es un clon de la plataforma de Netflix creado con [Next.js](https://nextjs.org/), con [Stripe](https://stripe.com/es), con [TMDB API](https://www.themoviedb.org/?language=es-ES) y [Tailwind Css](), y usando el lenguaje Typescript, completamente desde cero.
 
 La página sera desplegada con [Vercel](https://vercel.com/).
 
